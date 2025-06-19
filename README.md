@@ -1,4 +1,8 @@
-# ZapLink - Modern URL Shortener
+<div align="center">
+  <img src="public/images/logo2.png" alt="ZapLink Logo" width="200"/>
+  
+  # ZapLink - Modern URL Shortener
+</div>
 
 A fast, reliable, and scalable URL shortener service built with Next.js 15 and MongoDB. Create short, memorable links for any URL with a clean, user-friendly interface.
 
