@@ -4,7 +4,7 @@
 
 //     const body = await request.json()
 //     const client = await clientPromise;
-//     const db = client.db("bitlinks");
+//     const db = client.db("zaplink");
 //     const collection = db.collection("url");
 
 //     const doc = await collection.findOne({ shorturl: body.shorturl })
@@ -26,7 +26,7 @@ export async function POST(request) {
 
     const body = await request.json()
     const client = await clientPromise;
-    const db = client.db("bitlinks")
+    const db = client.db("zaplink")
     const collection = db.collection("url")
 
     // Check if the short url exists

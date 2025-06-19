@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ZapLink - Modern URL Shortener
 
-## Getting Started
+A fast, reliable, and scalable URL shortener service built with Next.js 15 and MongoDB. Create short, memorable links for any URL with a clean, user-friendly interface.
 
-First, run the development server:
+## 🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Instant URL Shortening**: Quickly convert long URLs into short, shareable links
+- **Custom Aliases**: Create custom short URLs with your preferred alias
+- **Real-time Analytics**: Track click-through rates and traffic sources (coming soon)
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Secure**: Built with modern security best practices
+- **Light/Dark Mode**: Automatic theme switching based on system preferences
+
+## 🛠️ Tech Stack
+
+- **Frontend**: 
+  - Next.js 15 (App Router)
+  - React 19
+  - Tailwind CSS
+  - TypeScript (optional)
+
+- **Backend**:
+  - Next.js API Routes
+  - MongoDB (Database)
+  - Mongoose (ODM)
+
+- **Deployment**:
+  - Vercel (Frontend)
+  - MongoDB Atlas (Database)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0.0 or later
+- MongoDB Atlas account or local MongoDB instance
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/zaplink.git
+   cd zaplink
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   NEXT_PUBLIC_HOST=http://localhost:3000
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📁 Project Structure
+
+```
+zaplink/
+├── app/                     # App router pages and API routes
+│   ├── api/                 # API routes
+│   ├── [shorturl]/          # Dynamic route for redirecting short URLs
+│   ├── layout.js            # Root layout
+│   └── page.js              # Home page
+├── components/              # Reusable components
+│   └── Navbar.js            # Navigation component
+├── lib/                     # Utility functions
+├── public/                  # Static files
+│   └── images/              # Image assets
+├── .env.local               # Environment variables
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔄 How It Works
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **URL Shortening**
+   - User enters a long URL (and optional custom alias) on the homepage
+   - System generates a unique short code
+   - URL mapping is stored in MongoDB
+   - Short URL is returned to the user
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Redirection**
+   - User visits a short URL (e.g., `zapl.ink/abc123`)
+   - System looks up the original URL in the database
+   - User is redirected to the original URL
 
-## Learn More
+3. **Analytics** (Future Implementation)
+   - Track number of clicks
+   - Record referrer information
+   - Geographic location tracking
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file in the root directory with the following variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+MONGODB_URI=your_mongodb_connection_string
+NEXT_PUBLIC_HOST=http://localhost:3000
+# Optional:
+# ANALYTICS_ENABLED=true
+# GOOGLE_ANALYTICS_ID=your_ga_id
+```
 
-## Deploy on Vercel
+## 📸 Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*Add your application screenshots here*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by popular URL shorteners like Bit.ly and TinyURL
+- Built with Next.js and MongoDB
+- Icons from [Heroicons](https://heroicons.com/)
+
+---
+
+Made with ❤️ and Next.js

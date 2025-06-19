@@ -24,7 +24,7 @@ export default async function Page({ params }) {
     const shorturl = (await params).shorturl
 
     const client = await clientPromise;
-    const db = client.db("bitlinks")
+    const db = client.db("zaplink")
     const collection = db.collection("url")
 
     const doc = await collection.findOne({shorturl: shorturl})
